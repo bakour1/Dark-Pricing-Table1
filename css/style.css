@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+}
+
+:root {
+  --bg-body: #fff;
+  --bg-section: #242424;
+  --bg-active: #03A9F4;
+  --c-active: #fff;
+  --c-text: #555;
+  --c-border: #ffffff38;
+  --c-border-active: #ffffff38;
+}
+
+
+ul {
+  list-style: none;
+}
+
+
+/* html {
+  font-size: 13px;
+} */
+
+@media (min-width:350px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: var(--bg-body);
+  font-family: "Droid Arabic Kufi", sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parent {
+  width: fit-content;
+  margin: 3.75rem auto;
+  min-height: 32.5rem;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  row-gap: 3.75rem;
+}
+
+section {
+  background-color: var(--bg-section);
+  width: 17.8125rem;
+  height: 32.5rem;
+  padding-block: 2.5rem;
+  text-align: center;
+  border-left: 1px solid var(--c-border);
+  color: var(--bg-body);
+}
+
+section .title {
+  height: 8.75rem;
+  padding-block: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+section .title p {
+  font-size: 30px;
+  position: relative;
+}
+
+section .title p::before {
+  content: '$';
+  position: absolute;
+  top: 0;
+  right: 100%;
+  font-size: 1rem;
+}
+
+section .title p span {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: none;
+  margin-left: -6px;
+}
+
+section ul li {
+  color: var(--c-text);
+  height: 3.4375rem;
+  line-height: 3.4375rem;
+  font-size: 1rem;
+  border-top: .0625rem solid var(--c-border);
+}
+
+section ul li:nth-child(even) {
+  background-color: #2A2A2A;
+}
+
+a {
+  display: flex;
+  width: 9.6875rem;
+  height: 2.8125rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem auto;
+  border: 1px solid var(--c-border);
+  color: var(--c-active);
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--bg-active);
+  color: var(--c-active);
+}
+
+section.active {
+  /* height: calc(32.5rem + 30px); */
+  border: none;
+  box-shadow:
+    0 30px 0 var(--bg-active),
+    0 -30px 0 var(--bg-active);
+}
+
+section.active ul {
+  border-bottom: 1px solid var(--c-border-active);
+}
+
+section.active,
+section.active>ul li,
+section.active>a {
+  background-color: var(--bg-active);
+  color: #fff;
+  border-width: 1px;
+  border-color: var(--c-border-active);
+}
